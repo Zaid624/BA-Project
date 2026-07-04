@@ -1,131 +1,68 @@
-# BA Project - Superstore Data Analysis
+# Sales Discount Strategy Analysis
 
-This project fetches and displays data from the "Superstore Data" PostgreSQL table.
+**One-line pitch:** A Business Analyst portfolio project tracing where $2.30M in retail sales translates into profit — and where discounting erodes it — using SQL, Python, Streamlit, and Power BI-ready exports.
 
-## Setup
+---
 
-### 1. Virtual Environment
+## The Business Problem
 
-The project uses a Python virtual environment (`.venv`) to manage dependencies.
+The Head of Sales needed to know: *Is our discounting strategy working?* Sales volume alone doesn't explain performance. This project analyzes 9,977 transaction lines across 4 regions, 3 categories, and 17 sub-categories to identify where discounts, product mix, and geography drive or destroy margin.
 
-#### Windows - PowerShell
+## What I Did
+
+| Layer | Deliverable |
+|---|---|
+| **Business case** | Problem statement framed for a Head of Sales (`1_business_case/`) |
+| **Requirements** | Stakeholder questions + data dictionary with GDPR awareness (`2_requirements/`) |
+| **Analysis** | 15 SQL/Python queries exporting real results, with data-quality documentation (`3_analysis/`) |
+| **Dashboard** | Interactive Streamlit app with KPI cards, scatter plots, and filters (`4_dashboard/`) |
+| **Power BI track** | Pre-aggregated CSVs + build guide for Power BI Desktop (`4_dashboard/powerbi_export/`) |
+| **Deliverables** | Executive summaries in English + German, slide deck outline, resume bullets, LinkedIn post (`5_deliverables/`) |
+| **Testing** | Data-quality tests (pytest) codifying cleaning checks (`tests/`) |
+
+## Headline Finding
+
+**Discounts above 20% are collectively loss-making.** The 60%+ band generated $57,580 in sales but lost $70,608 at a -122.63% margin. By contrast, no-discount lines produced $1,087,278 in sales at 29.51% margin.
+
+## Dataset Limitations
+
+The source has no order dates, customer IDs, product names, campaign history, or cost-of-goods data. The analysis identifies commercial patterns, not causal proof.
+
+## Tech Stack
+
+Python · PostgreSQL · SQL · Streamlit · Plotly · pandas · pytest · Power BI–ready CSVs
+
+## How to Run
+
 ```powershell
-# Activate virtual environment
-.venv\Scripts\Activate.ps1
+# 1. Install dependencies
+.venv\Scripts\python.exe -m pip install -r requirements.txt
 
-# Deactivate
-deactivate
+# 2. Regenerate analysis (requires .env with DATABASE_URL)
+.venv\Scripts\python.exe 3_analysis\business_queries.py
+
+# 3. Run data-quality tests
+.venv\Scripts\python.exe -m pytest
+
+# 4. Launch dashboard
+.venv\Scripts\streamlit.exe run 4_dashboard\app.py
 ```
 
-#### Windows - Command Prompt
-```cmd
-# Activate virtual environment
-.venv\Scripts\activate.bat
+## Dashboard
 
-# Deactivate
-deactivate
+The Streamlit app (`4_dashboard/app.py`) provides interactive filtering by region and category with KPI cards, profit-by-category bars, a discount-vs-profit scatter plot, and a top/bottom sub-category table. Deployable on Streamlit Community Cloud.
+
+## Structure
+
 ```
-
-#### Quick Start (Windows)
-Simply double-click `activate.bat` to activate the virtual environment, or `run.bat` to run the main script.
-
-### 2. Install Dependencies
-
-If you need to reinstall dependencies:
-```bash
-# With virtual environment activated
-pip install -r requirements.txt
+sales-discount-strategy-analysis/
+├── 1_business_case/          # Problem statement
+├── 2_requirements/           # Stakeholder questions, data dictionary
+├── 3_analysis/               # SQL queries, outputs/, data-quality notes
+├── 4_dashboard/              # Streamlit app, powerbi_export/
+├── 5_deliverables/           # Executive summaries (EN/DE), slide deck, resume, LinkedIn
+├── tests/                    # pytest data-quality tests
+├── .gitignore
+├── requirements.txt
+└── README.md
 ```
-
-### 3. Environment Variables
-
-Ensure you have a `.env` file in the project root with:
-```
-DATABASE_URL=your_database_connection_string
-```
-
-## Verify Setup
-
-Check if everything is configured correctly:
-```cmd
-.venv\Scripts\python check_env.py
-```
-
-## Running the Project
-
-### Option 1: Using the batch script (Easiest)
-```cmd
-run.bat
-```
-
-### Option 2: Manual execution
-```cmd
-# Activate virtual environment
-.venv\Scripts\activate.bat
-
-# Run the script
-python main.py
-```
-
-### Option 3: Direct execution with venv Python
-```cmd
-.venv\Scripts\python main.py
-```
-
-## Output
-
-The script will:
-- Connect to your PostgreSQL/Supabase database
-- Fetch all records from the "Superstore Data" table
-- Display them in a formatted table
-- Show the total count (9994 rows)
-
-### Sample Output:
-```
-Connecting to database...
-Connected successfully!
-
-Ship Mode       | Segment         | Country         | City            | State           | ...
-==================================================================================
-Second Class    | Consumer        | United States   | Henderson       | Kentucky        | ...
-Second Class    | Consumer        | United States   | Henderson       | Kentucky        | ...
-...
-
-Total rows: 9994
-
-Database connection closed.
-```
-
-## Dependencies
-
-- `psycopg2-binary` - PostgreSQL database adapter
-- `python-dotenv` - Environment variable management
-
-## Database Schema
-
-Table: `public."Superstore Data"`
-
-Columns:
-- Ship Mode (text)
-- Segment (text)
-- Country (text)
-- City (text)
-- State (text)
-- Postal Code (bigint)
-- Region (text)
-- Category (text)
-- Sub-Category (text)
-- Sales (double precision)
-- Quantity (bigint)
-- Discount (double precision)
-- Profit (double precision)
-
-## Troubleshooting
-
-### Database Connection Issues
-
-If you see "could not translate host name" error:
-1. Check your internet connection
-2. Verify the DATABASE_URL in `.env` is correct
-3. Ensure your Supabase database is active (may need to wake it up from the dashboard)
-4. Confirm the database server is accessible

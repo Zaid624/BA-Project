@@ -1,0 +1,11 @@
+category,sub_category,units_sold,transaction_lines,total_sales,total_profit
+Office Supplies,Binders,5971,1522,203409.17,30228.00
+Office Supplies,Paper,5144,1359,78224.14,33944.24
+Furniture,Furnishings,3560,956,91683.02,13052.72
+Technology,Phones,3289,889,330007.05,44515.73
+Office Supplies,Storage,3158,846,223843.61,21278.83
+Office Supplies,Art,2996,795,27107.03,6524.61
+Technology,Accessories,2976,775,167380.32,41936.64
+Furniture,Chairs,2351,615,327777.76,26567.13
+Office Supplies,Appliances,1729,466,107532.16,18138.01
+Office Supplies,Labels,1396,363,12444.91,5526.38

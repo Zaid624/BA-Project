@@ -1,0 +1,4 @@
+segment,total_sales,total_profit,margin_pct,avg_transaction_line_value,transaction_lines
+Consumer,1160832.77,134007.44,11.54,223.97,5183
+Corporate,706070.13,91954.98,13.02,234.19,3015
+Home Office,429292.68,60279.00,14.04,241.31,1779

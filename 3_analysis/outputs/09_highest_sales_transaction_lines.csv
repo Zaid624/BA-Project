@@ -1,0 +1,11 @@
+category,sub_category,sales,quantity,discount,profit,margin_pct,region,state,city
+Technology,Machines,22638.48,6,0.5,-1811.08,-8.00,South,Florida,Jacksonville
+Technology,Copiers,17499.95,5,0.0,8399.98,48.00,Central,Indiana,Lafayette
+Technology,Copiers,13999.96,4,0.0,6719.98,48.00,West,Washington,Seattle
+Technology,Copiers,11199.97,4,0.2,3919.99,35.00,East,New York,New York City
+Technology,Copiers,10499.97,3,0.0,5039.99,48.00,East,Delaware,Newark
+Office Supplies,Binders,9892.74,13,0.0,4946.37,50.00,Central,Michigan,Detroit
+Office Supplies,Binders,9449.95,5,0.0,4630.48,49.00,Central,Minnesota,Minneapolis
+Technology,Machines,9099.93,7,0.0,2365.98,26.00,East,New Jersey,Lakewood
+Technology,Machines,8749.95,5,0.0,2799.98,32.00,South,Virginia,Arlington
+Technology,Copiers,8399.98,4,0.4,1120.00,13.33,East,Pennsylvania,Philadelphia

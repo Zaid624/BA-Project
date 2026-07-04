@@ -1,0 +1,13 @@
+region,segment,avg_transaction_line_value,avg_profit_per_line,transaction_lines
+Central,Corporate,235.43,27.88,671
+Central,Home Office,208.25,28.40,438
+Central,Consumer,207.93,7.04,1210
+East,Home Office,254.33,53.43,500
+East,Consumer,239.00,28.04,1468
+East,Corporate,228.52,26.94,877
+South,Home Office,273.00,16.99,272
+South,Corporate,238.99,29.83,510
+South,Consumer,233.39,32.12,838
+West,Home Office,240.17,29.01,569
+West,Corporate,235.94,35.96,957
+West,Consumer,217.64,34.44,1667

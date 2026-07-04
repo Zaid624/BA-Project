@@ -1,0 +1,13 @@
+category,ship_mode,transaction_lines,total_sales,total_profit
+Furniture,Standard Class,1245,435137.99,10331.26
+Furniture,Second Class,427,156289.02,4226.26
+Furniture,First Class,327,110730.52,3066.95
+Furniture,Same Day,119,39148.78,797.35
+Office Supplies,Standard Class,3628,427735.33,70508.68
+Office Supplies,Second Class,1150,160666.48,27068.18
+Office Supplies,First Class,909,101284.36,18384.15
+Office Supplies,Same Day,325,29049.08,6403.65
+Technology,Standard Class,1082,494443.03,83129.29
+Technology,Second Class,366,142221.54,26152.21
+Technology,First Class,301,139365.59,27502.56
+Technology,Same Day,98,60123.87,8670.89
