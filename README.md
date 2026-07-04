@@ -52,6 +52,12 @@ Python · PostgreSQL · SQL · Streamlit · Plotly · pandas · pytest · Power 
 
 The Streamlit app (`4_dashboard/app.py`) provides interactive filtering by region and category with KPI cards, profit-by-category bars, a discount-vs-profit scatter plot, and a top/bottom sub-category table. Deployable on Streamlit Community Cloud.
 
+<img width="1728" height="1060" alt="file-69a65db11a3d4d778683a493b83a7ef6" src="https://github.com/user-attachments/assets/f8b60cff-6673-4cb3-b2dd-e1f8cd0f74cb" />
+<img width="1727" height="1057" alt="file-ba08b4cd1a93f514c99e69406a1e1af7" src="https://github.com/user-attachments/assets/ccd8b52d-599a-4842-b7d3-8ac11eec02c6" />
+
+
+
+
 ## Structure
 
 ```
