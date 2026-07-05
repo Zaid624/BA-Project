@@ -5,3 +5,5 @@ plotly
 streamlit
 pytest
 scipy
+scikit-learn
+matplotlib

@@ -20,20 +20,20 @@ Takeaway: The analysis uses 9,977 distinct transaction lines after removing 17 e
 Chart: Profit and margin by discount band.  
 Takeaway: Discounts above 20% are collectively loss-making; the 60%+ discount band lost $70,608.16 at a -122.63% margin.
 
-## 5. Finding: Category Margin Gap
+## 5. Finding: Category & Product Margin Gaps
 
-Chart: Profit by category with margin labels.  
-Takeaway: Technology delivers a 17.40% margin, while Furniture produces only 2.49% despite $741,306.31 in sales.
+Chart: Profit by category (bar) + bottom sub-categories and states.  
+Takeaway: Technology (17.40% margin) outperforms Furniture (2.49%) by a wide margin. Tables alone lost $17,725 and Texas lost $25,751.
 
 ## 6. Finding: What-If Scenario Impact
 
 Chart: Bar chart comparing additional profit per scenario (cap at 30%, cap at 20%, zero discount).  
 Takeaway: Capping discounts at 20% could increase profit by $219,140 (+77%) and lift margin from 12.47% to 20.09%.
 
-## 7. Finding: Concentrated Loss Areas
+## 7. Forecast (Methodology Demo)
 
-Chart: Bottom 10 states or sub-categories by profit.  
-Takeaway: Texas lost $25,750.98 and Tables lost $17,725.48, making them priority areas for pricing and discount review.
+Chart: 12-month sales forecast with historical vs projected line.  
+Takeaway: The forecast pipeline demonstrates time-series methodology using synthetic dates (MAPE: 7.8%). The model captures realistic Q4 seasonality. Forecasts are not actionable until real dates are available.
 
 ## 8. Recommendations and Next Steps
 

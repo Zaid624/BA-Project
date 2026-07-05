@@ -13,8 +13,8 @@ The Head of Sales needed to know: *Is our discounting strategy working?* Sales v
 | Layer | Deliverable |
 |---|---|
 | **Business case** | Problem statement framed for a Head of Sales (`1_business_case/`) |
-| **Requirements** | Stakeholder questions + data dictionary with GDPR awareness (`2_requirements/`) |
-| **Analysis** | 15 SQL/Python queries + what-if scenario model (discount cap simulation), all exporting real results (`3_analysis/`) |
+| **Requirements** | Stakeholder questions + data dictionary + privacy-by-design notes for DSGVO/GDPR compliance (`2_requirements/`) |
+| **Analysis** | 15 SQL/Python queries + what-if scenario model + time-series forecast with synthetic dates to demonstrate methodology (`3_analysis/`) |
 | **Dashboard** | Interactive Streamlit app with KPI cards, scatter plots, and filters (`4_dashboard/`) |
 | **Power BI track** | Pre-aggregated CSVs + build guide for Power BI Desktop (`4_dashboard/powerbi_export/`) |
 | **Deliverables** | Executive summaries in English + German, slide deck outline, resume bullets, LinkedIn post (`5_deliverables/`) |
@@ -24,6 +24,12 @@ The Head of Sales needed to know: *Is our discounting strategy working?* Sales v
 ## Headline Finding
 
 **Discounts above 20% are collectively loss-making.** The 60%+ band generated $57,580 in sales but lost $70,608 at a -122.63% margin. By contrast, no-discount lines produced $1,087,278 in sales at 29.51% margin.
+
+## Forecast
+
+The dataset has no dates, so synthetic dates were assigned to demonstrate time-series methodology. A linear regression model with monthly seasonality forecasts $1,155,761 in annual sales (+0.4% vs last 12 months, MAPE: 7.8%). Results are methodological only — not actionable without real dates.
+
+![Forecast chart](5_deliverables/forecast_chart.png)
 
 ## What-If Scenario: Cap Discounts at 20%
 
