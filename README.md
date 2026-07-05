@@ -14,7 +14,7 @@ The Head of Sales needed to know: *Is our discounting strategy working?* Sales v
 |---|---|
 | **Business case** | Problem statement framed for a Head of Sales (`1_business_case/`) |
 | **Requirements** | Stakeholder questions + data dictionary with GDPR awareness (`2_requirements/`) |
-| **Analysis** | 15 SQL/Python queries exporting real results, with data-quality documentation (`3_analysis/`) |
+| **Analysis** | 15 SQL/Python queries + what-if scenario model (discount cap simulation), all exporting real results (`3_analysis/`) |
 | **Dashboard** | Interactive Streamlit app with KPI cards, scatter plots, and filters (`4_dashboard/`) |
 | **Power BI track** | Pre-aggregated CSVs + build guide for Power BI Desktop (`4_dashboard/powerbi_export/`) |
 | **Deliverables** | Executive summaries in English + German, slide deck outline, resume bullets, LinkedIn post (`5_deliverables/`) |
@@ -23,6 +23,10 @@ The Head of Sales needed to know: *Is our discounting strategy working?* Sales v
 ## Headline Finding
 
 **Discounts above 20% are collectively loss-making.** The 60%+ band generated $57,580 in sales but lost $70,608 at a -122.63% margin. By contrast, no-discount lines produced $1,087,278 in sales at 29.51% margin.
+
+## What-If Scenario: Cap Discounts at 20%
+
+The what-if scenario model estimates that capping all discounts at 20% could increase total profit by **$219,140 (+77%)** — from $286,241 to $505,382 — and improve overall margin from 12.47% to 20.09%. Even a moderate 30% cap would add $146,437 in profit. Try it live in the dashboard.
 
 ## Dataset Limitations
 

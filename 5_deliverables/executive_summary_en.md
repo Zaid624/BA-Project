@@ -14,6 +14,8 @@ Category mix is a major margin issue. Technology generated $836,154.03 in sales 
 
 Losses are concentrated in specific states and sub-categories. Texas lost $25,750.98 on $170,124.54 in sales, and Tables lost $17,725.48 on $206,965.53 in sales.
 
+A what-if scenario model shows that capping discounts at 20% could increase total profit by $219,140 (from $286,241 to $505,382) and improve overall margin from 12.47% to 20.09%. Even a moderate cap at 30% would add $146,437 in profit.
+
 ## Recommendations
 
 Introduce stricter approval rules for discounts above 20%, with particular scrutiny for discounts of 60% or more because this band is deeply loss-making in the current data.
@@ -21,6 +23,8 @@ Introduce stricter approval rules for discounts above 20%, with particular scrut
 Treat Furniture as a margin-recovery priority, especially Tables and Bookcases, by reviewing discount rules, sales incentives, and whether low-margin products should be bundled with more profitable categories.
 
 Use the West, New York, California, Washington, and high-margin sub-categories such as Copiers, Paper, and Accessories as benchmarks for profitable growth playbooks.
+
+Use the what-if scenario model in the dashboard to test different discount caps interactively by region and category. The model estimates that even a moderate 30% cap could add $146,437 to annual profit.
 
 ## Open Questions
 

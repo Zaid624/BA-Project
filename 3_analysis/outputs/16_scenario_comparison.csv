@@ -1,0 +1,4 @@
+scenario,cap,total_sales,total_profit,margin_pct,delta_sales,delta_profit,rows_affected,pct_rows_affected
+A - Cap at 30%,0.3,2442632.53,432678.36,17.71,146436.94,146436.94,1165,11.7
+B - Cap at 20%,0.2,2515335.7,505381.53,20.09,219140.11,219140.11,1391,13.9
+C - Zero discount,0.0,2862772.57,852818.4,29.79,566576.98,566576.98,5190,52.0

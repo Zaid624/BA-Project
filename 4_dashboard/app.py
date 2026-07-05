@@ -216,3 +216,89 @@ with table_col:
         use_container_width=True,
         hide_index=True,
     )
+
+st.divider()
+st.header("What-If Scenario Model")
+st.caption(
+    "What would happen to profit if we capped discount rates? "
+    "The model assumes the same quantity sells at the lower discount (optimistic upper bound). "
+    "Actual results depend on customer price sensitivity."
+)
+
+# Compute scenarios live from filtered data
+filtered["implied_base_sales"] = filtered["Sales"] / (1 - filtered["Discount"])
+filtered["cost"] = filtered["Sales"] - filtered["Profit"]
+
+scenarios = [
+    ("A - Cap at 30%", 0.30),
+    ("B - Cap at 20%", 0.20),
+    ("C - Zero discount", 0.00),
+]
+scenario_rows = []
+baseline_profit = filtered["Profit"].sum()
+baseline_sales = filtered["Sales"].sum()
+
+for name, cap in scenarios:
+    cap_mask = filtered["Discount"] > cap
+    n_affected = cap_mask.sum()
+
+    new_sales = filtered["Sales"].copy()
+    new_profit = filtered["Profit"].copy()
+
+    new_sales.loc[cap_mask] = (
+        filtered.loc[cap_mask, "implied_base_sales"] * (1 - cap)
+    )
+    new_profit.loc[cap_mask] = new_sales.loc[cap_mask] - filtered.loc[cap_mask, "cost"]
+
+    delta_profit = new_profit.sum() - baseline_profit
+    new_margin = new_profit.sum() / new_sales.sum() * 100
+
+    scenario_rows.append({
+        "Scenario": name,
+        "Total Sales": new_sales.sum(),
+        "Total Profit": new_profit.sum(),
+        "Margin %": new_margin,
+        "Profit Change": delta_profit,
+        "Rows Affected": n_affected,
+    })
+
+scenario_df = pd.DataFrame(scenario_rows)
+baseline_row = pd.DataFrame([{
+    "Scenario": "Baseline (current)",
+    "Total Sales": baseline_sales,
+    "Total Profit": baseline_profit,
+    "Margin %": baseline_profit / baseline_sales * 100 if baseline_sales else 0,
+    "Profit Change": 0,
+    "Rows Affected": 0,
+}])
+scenario_df = pd.concat([baseline_row, scenario_df], ignore_index=True)
+
+st.dataframe(
+    scenario_df.style.format({
+        "Total Sales": "${:,.0f}",
+        "Total Profit": "${:,.0f}",
+        "Margin %": "{:.1f}%",
+        "Profit Change": "${:+,.0f}",
+        "Rows Affected": "{:,}",
+    }),
+    use_container_width=True,
+    hide_index=True,
+)
+
+fig = px.bar(
+    scenario_df[scenario_df["Scenario"] != "Baseline (current)"],
+    x="Scenario",
+    y="Profit Change",
+    color="Scenario",
+    text_auto="$.0f",
+    labels={"Profit Change": "Additional Profit vs Baseline", "Scenario": ""},
+)
+fig.update_layout(showlegend=False, margin=dict(l=10, r=10, t=20, b=10), height=400)
+st.plotly_chart(fig, use_container_width=True)
+
+st.caption(
+    "**Assumptions & limitations:** The model infers cost as Sales minus Profit and assumes "
+    "the same quantity is sold at the capped discount. It does not account for customers who "
+    "may not purchase at a lower discount rate. For Scenario C (zero discount), all discounted "
+    "transactions are recalculated at 0% discount. Results are upper-bound estimates."
+)
