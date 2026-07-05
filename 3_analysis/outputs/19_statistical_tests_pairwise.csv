@@ -1,0 +1,16 @@
+test,group1,group2,mean1,mean2,diff,p_value,cohens_d,interpretation
+Region margin comparison,Central,East,-9.95,16.74,-26.69,0.0,-0.484,Small
+Region margin comparison,Central,South,-9.95,16.35,-26.3,0.0,-0.436,Small
+Region margin comparison,Central,West,-9.95,21.88,-31.83,0.0,-0.608,Medium
+Region margin comparison,East,South,16.74,16.35,0.39,0.703717,0.012,Negligible
+Region margin comparison,East,West,16.74,21.88,-5.13,0.0,-0.168,Negligible
+Region margin comparison,South,West,16.35,21.88,-5.53,0.0,-0.186,Negligible
+Category margin comparison,Furniture,Office Supplies,3.87,13.98,-10.11,0.0,-0.202,Small
+Category margin comparison,Furniture,Technology,3.87,15.6,-11.73,0.0,-0.395,Small
+Category margin comparison,Office Supplies,Technology,13.98,15.6,-1.62,0.066998,-0.033,Negligible
+Discount band margin comparison,0%,1-20%,34.0,17.42,16.58,0.0,1.095,Large
+Discount band margin comparison,0%,21-40%,34.0,-16.71,50.71,0.0,3.735,Large
+Discount band margin comparison,0%,40%+,34.0,-108.43,142.43,0.0,5.332,Large
+Discount band margin comparison,1-20%,21-40%,17.42,-16.71,34.13,0.0,2.034,Large
+Discount band margin comparison,1-20%,40%+,17.42,-108.43,125.84,0.0,4.168,Large
+Discount band margin comparison,21-40%,40%+,-16.71,-108.43,91.71,0.0,1.876,Large

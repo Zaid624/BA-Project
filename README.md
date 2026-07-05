@@ -19,6 +19,7 @@ The Head of Sales needed to know: *Is our discounting strategy working?* Sales v
 | **Power BI track** | Pre-aggregated CSVs + build guide for Power BI Desktop (`4_dashboard/powerbi_export/`) |
 | **Deliverables** | Executive summaries in English + German, slide deck outline, resume bullets, LinkedIn post (`5_deliverables/`) |
 | **Testing** | Data-quality tests (pytest) codifying cleaning checks (`tests/`) |
+| **Agile backlog** | User stories with acceptance criteria + Kanban board sprint snapshot — traceable to real data findings (`6_agile_backlog/`) |
 
 ## Headline Finding
 

@@ -1,0 +1,4 @@
+test,p_value,significant,eta_squared,pairwise_count
+Region margin comparison,0.0,True,0.0707,6
+Category margin comparison,0.0,True,0.0087,3
+Discount band margin comparison,0.0,True,0.7547,6
